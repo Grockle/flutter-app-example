@@ -18,9 +18,10 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: Center(
+        child: Container(
           child: Column(
             children: <Widget>[
               pages[_currentIndex]
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar:  ConvexAppBar(
         items: const [
           TabItem(icon: Icons.repeat, title: 'Repeats'),
-          TabItem(icon: Icons.cake_outlined, title: 'Special Days'),
+          TabItem(icon: Icons.cake_outlined, title: 'Specials'),
           TabItem(icon: Icons.add, title: 'Add Event'),
           TabItem(icon: Icons.directions_bike_outlined, title: 'Activity'),
           TabItem(icon: Icons.check, title: 'Todo'),

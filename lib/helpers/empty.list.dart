@@ -15,8 +15,8 @@ class _EmptyListState extends State<EmptyList> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Container(
-      height: height / 2.5,
-      width: width * 0.9,
+      height: height / 2,
+      width: width * 0.7,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(
@@ -38,7 +38,7 @@ class _EmptyListState extends State<EmptyList> {
         children: <Widget>[
           Container(child: Lottie.asset(
               'assets/add1.json',
-              height: height / 2
+              height: height / 4
           )
           ),
           SizedBox(height: 20),
@@ -55,3 +55,5 @@ class _EmptyListState extends State<EmptyList> {
     );
   }
 }
+
+
