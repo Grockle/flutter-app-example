@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:reminder/helpers/empty.list.dart';
+import 'package:reminder/helpers/event.card.template.dart';
 
 class Repeats extends StatefulWidget {
   @override
@@ -11,39 +11,6 @@ class Repeats extends StatefulWidget {
 class _RepeatsState extends State<Repeats> {
   var height = 0.0;
   var width = 0.0;
-
-  Widget ConteinerTemplate() {
-    return Container(
-        height: height / 5,
-        margin: EdgeInsets.only(left: width / 60, right: width / 60),
-        decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10)
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
-        )
-    );
-  }
-
-  Widget getListOfRepeats() {
-    return ListView(
-        children: <Widget>[
-        ConteinerTemplate()
-      ]
-    );
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -67,15 +34,13 @@ class _RepeatsState extends State<Repeats> {
             child: ListView(
               children: <Widget>[
                 SizedBox(height: height / 50),
-                ConteinerTemplate(),
-                SizedBox(height: height / 40),
-                ConteinerTemplate(),
-                SizedBox(height: height / 40),
-                ConteinerTemplate(),
-                SizedBox(height: height / 40),
-                ConteinerTemplate(),
-                SizedBox(height: height / 40),
-                ConteinerTemplate()
+                EventCardTemplate('Daily',height,width),
+                SizedBox(height: height / 50),
+                EventCardTemplate('Weekly',height,width),
+                SizedBox(height: height / 50),
+                EventCardTemplate('Monthly',height,width),
+                SizedBox(height: height / 50),
+                EventCardTemplate('Yearly',height,width),
               ],
             ),
           )
