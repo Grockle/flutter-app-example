@@ -33,13 +33,7 @@ class _SpecialDaysState extends State<SpecialDays> {
                 child: ListView(
                   children: <Widget>[
                     SizedBox(height: height / 50),
-                    EventCardTemplate('Birthday',height,width),
-                    SizedBox(height: height / 50),
-                    EventCardTemplate('Mothers Day',height,width),
-                    SizedBox(height: height / 50),
-                    EventCardTemplate('Valentines Day',height,width),
-                    SizedBox(height: height / 50),
-                    EventCardTemplate('Fathers Day',height,width),
+                    EventCardTemplate('Birthday',height,width)
                   ],
                 ),
               )

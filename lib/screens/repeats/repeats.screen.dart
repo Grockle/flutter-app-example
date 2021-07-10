@@ -34,13 +34,7 @@ class _RepeatsState extends State<Repeats> {
             child: ListView(
               children: <Widget>[
                 SizedBox(height: height / 50),
-                EventCardTemplate('Daily',height,width),
-                SizedBox(height: height / 50),
-                EventCardTemplate('Weekly',height,width),
-                SizedBox(height: height / 50),
-                EventCardTemplate('Monthly',height,width),
-                SizedBox(height: height / 50),
-                EventCardTemplate('Yearly',height,width),
+                EventCardTemplate('Rent',height,width)
               ],
             ),
           )
