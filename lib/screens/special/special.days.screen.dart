@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:reminder/helpers/event.card.template.dart';
+import 'package:reminder/helpers/special.card.template.dart';
 
 class SpecialDays extends StatefulWidget {
   @override
@@ -33,7 +34,11 @@ class _SpecialDaysState extends State<SpecialDays> {
                 child: ListView(
                   children: <Widget>[
                     SizedBox(height: height / 50),
-                    EventCardTemplate('Birthday',height,width)
+                    SpecialCard('Birthday',0,height,width),
+                    SizedBox(height: height / 50),
+                    SpecialCard('Ramadan',1,height,width),
+                    SizedBox(height: height / 50),
+                    SpecialCard('Valentine',2,height,width)
 
                   ],
                 ),

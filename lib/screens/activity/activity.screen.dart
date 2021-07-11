@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:reminder/helpers/event.card.template.dart';
+import 'package:reminder/helpers/activity.card.template.dart';
 
 class Activity extends StatefulWidget {
   @override
@@ -35,7 +36,11 @@ class _ActivityState extends State<Activity> {
                 child: ListView(
                   children: <Widget>[
                     SizedBox(height: height / 50),
-                    EventCardTemplate('Go Sport',height,width)
+                    ActivityCard('Sport',0,height,width),
+                    SizedBox(height: height / 50),
+                    ActivityCard('Meeting',1,height,width),
+                    SizedBox(height: height / 50),
+                    ActivityCard('Travel',2,height,width),
                   ],
                 ),
               )
