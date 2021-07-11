@@ -33,18 +33,18 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {},
-        backgroundColor: Color(0xff13d38e),
+        backgroundColor: HexColor('#e01e5a'),
         child: Icon(Icons.add),
       ),
       bottomNavigationBar:  ConvexAppBar(
         items: const [
-          TabItem(icon: Icons.repeat, title: 'Repeats'),
+          TabItem(icon: Icons.repeat, title: 'Routine'),
           TabItem(icon: Icons.cake_outlined, title: 'Specials'),
           TabItem(icon: Icons.directions_bike_outlined, title: 'Activity'),
           TabItem(icon: Icons.notes, title: 'Notes'),
           TabItem(icon: Icons.check, title: 'Todo'),
         ],
-        backgroundColor: HexColor('#CE375C'),
+        backgroundColor: HexColor('#e01e5a'),
         initialActiveIndex: _currentIndex,//optional, default as 0
         onTap: (index) {
           setState(() => _currentIndex = index);

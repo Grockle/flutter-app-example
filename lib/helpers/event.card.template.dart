@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:lottie/lottie.dart';
 
 class EventCardTemplate extends StatefulWidget {
   final String schedule;
@@ -36,19 +38,26 @@ class _EventCardTemplateState extends State<EventCardTemplate> {
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Flexible(
               flex: 1,
               child: Container(
                 decoration: BoxDecoration(
-                    color: HexColor('#4A154B'),
+                    color: HexColor('#2eb67d'),
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10)
                     )
                 ),
                 child: Align(
-                  child: Text(widget.schedule, style: GoogleFonts.openSans(color: Colors.white, fontSize: widget.width / 21),),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(flex: 8, child: Container(margin: EdgeInsets.only(left: 10),child: Text(widget.schedule, style: GoogleFonts.openSans(color: Colors.white, fontSize: widget.width / 23)))),
+                      Expanded(flex: 1, child: Icon(Icons.delete, color: Colors.white)),
+                      Expanded(flex: 1, child: Icon(Icons.edit, color: Colors.white)),
+                    ],
+                  ),
                 ),
               )
           ),
@@ -56,12 +65,39 @@ class _EventCardTemplateState extends State<EventCardTemplate> {
               flex: 3,
               child: Container(
                   decoration: BoxDecoration(
-                      color: Color(0xfff8b250),
+                      color: HexColor('#ecb22e'),
                       borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(10),
                           bottomRight: Radius.circular(10)
                       )
-                  )
+                  ),
+                child: Align(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(flex: 1, child: Container(
+                        child: Lottie.asset(
+                            'assets/daily_routine.json',
+                            height: widget.height / 6
+                          ),
+                        ),
+                      ),
+                      Expanded(flex: 3, child: Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            SizedBox(height: widget.height / 200),
+                            Text("Schedule: Montly", style: GoogleFonts.openSans(color: HexColor('#4a154b'), fontSize: widget.width / 30, fontWeight: FontWeight.bold)),
+                            Divider(color: Colors.black,),
+                            Text("Day: 01 / Time: 09:00", style: GoogleFonts.openSans(color: HexColor('#4a154b'), fontSize: widget.width / 30, fontWeight: FontWeight.bold)),
+                            Divider(color: Colors.black,),
+                            Text("Description:", style: GoogleFonts.openSans(color: HexColor('#4a154b'), fontSize: widget.width / 30, fontWeight: FontWeight.bold)),
+                            Text("Pay the rent", style: GoogleFonts.openSans(color: HexColor('#4a154b'), fontSize: widget.width / 30)),
+                          ],
+                        ),
+                      ))
+                    ],
+                  ),
+                ),
               )
           )
         ],

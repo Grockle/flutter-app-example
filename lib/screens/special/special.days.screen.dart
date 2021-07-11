@@ -34,6 +34,7 @@ class _SpecialDaysState extends State<SpecialDays> {
                   children: <Widget>[
                     SizedBox(height: height / 50),
                     EventCardTemplate('Birthday',height,width)
+
                   ],
                 ),
               )

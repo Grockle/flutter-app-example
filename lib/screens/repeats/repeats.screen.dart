@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:reminder/helpers/event.card.template.dart';
+import 'package:reminder/helpers/routine.card.template.dart';
 
 class Repeats extends StatefulWidget {
   @override
@@ -34,7 +35,14 @@ class _RepeatsState extends State<Repeats> {
             child: ListView(
               children: <Widget>[
                 SizedBox(height: height / 50),
-                EventCardTemplate('Rent',height,width)
+                RoutineCard('Read',3,height,width),
+                SizedBox(height: height / 50),
+                RoutineCard('Coffee',1,height,width),
+                SizedBox(height: height / 50),
+                RoutineCard('Yoga',2,height,width),
+                SizedBox(height: height / 50),
+                RoutineCard('Custom', 0,height,width)
+
               ],
             ),
           )
